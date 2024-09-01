@@ -11,9 +11,9 @@ import static org.example.SeleniumStaticDdWithClick.clickElement;
 public class Seleniume2eFlight {
     static WebDriver driver;
 
-    public static void main (String args []) throws InterruptedException {
+    public static void main(String args[]) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
-        driver =new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.spicejet.com/");
         driver.findElement(By.xpath("//div[@data-testid='to-testID-origin']")).click();
@@ -28,7 +28,7 @@ public class Seleniume2eFlight {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).click();
         System.out.println(driver.findElement(By.xpath("//div[contains(text(),'Adult')]")).getText());
-        clickElement(driver,4);
+        clickElement(driver, 4);
         driver.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).click();
         Thread.sleep(1000);
         System.out.println(driver.findElement(By.xpath("//div[contains(text(),'Adult')]")).getText());
@@ -40,7 +40,7 @@ public class Seleniume2eFlight {
         driver.findElement(By.xpath("//div[@data-testid='home-page-flight-cta']")).click();
         Thread.sleep(3000);
         String msg = driver.findElement(By.xpath("//div[text()='Family and Friends Discount Bookings']")).getText();
-        Assert.assertEquals(msg,"Family and Friends Discount Bookings");
+        Assert.assertEquals(msg, "Family and Friends Discount Bookings");
 
         Thread.sleep(1000);
         driver.close();
